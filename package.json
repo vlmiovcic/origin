@@ -1,0 +1,29 @@
+{
+   "name": "it-vladimirmiovcic.com",
+   "version": "1.0.0",
+   "description": "",
+   "main": "index.js",
+   "homepage": "https://homeserver.it-vladimirmiovcic.com",
+   "scripts": {
+      "test": "echo \"Error: no test specified\" && exit 1",
+      "start": "export HTTPS=true&&SSL_CRT_FILE=sslcert/it-vladimirmiovcic.com.crt&&SSL_KEY_FILE=sslcert/it-vladimirmiovcic.com.key  node server/index.js"
+   },
+   "keywords": [],
+   "author": "",
+   "license": "ISC",
+   "dependencies": {
+      "body-parser": "^1.19.0",
+      "cors": "^2.8.5",
+      "express": "^4.17.1",
+      "fs": "^0.0.1-security",
+      "http": "^0.0.1-security",
+      "http-proxy-middleware": "^2.0.0",
+      "https": "^1.0.0",
+      "https-proxy": "^0.0.2",
+      "mysql": "^2.18.1",
+      "react": "^17.0.2"
+   },
+   "devDependencies": {
+      "webpack": "^5.68.0"
+   }
+}

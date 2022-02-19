@@ -1,4 +1,5 @@
 client/node_modules
 node_modules
-sslcert
+sslcert/it-vladimirmiovcic.com.crt
+sslcert/it-vladimirmiovcic.com.key
 
