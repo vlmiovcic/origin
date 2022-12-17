@@ -42,6 +42,6 @@ httpsServer.listen(PORT, () => {
 });
 
 const apiProxy = createProxyMiddleware('/', {
-  target: 'https://homeserver.it-vladimirmiovcic.com:4043',
+  target: 'https://webserver.it-vladimirmiovcic.com:4043',
   changeOrigin: true,
 });
