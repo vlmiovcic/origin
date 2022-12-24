@@ -19,7 +19,15 @@ const app = express();
 app.use(cors());
 
 app.get('/api', (req, res) => {
-  res.json('Hello dev.to!');
+    dbConnection.query("SELECT * FROM products;", function (error, result, fields){
+        console.log(result);
+        // console.log(fields);
+        // console.log(error);
+        //result.release();
+        res.json({result});
+    });
+  //   console.log("app.get('/api':", test);
+  // res.json({0:'test'});
 });
 
 app.get('/upload', (req, res) => {
@@ -33,12 +41,12 @@ const httpsServer = https.createServer({
 
 httpsServer.listen(PORT, () => {
     console.log('HTTPS Server running on port ' + PORT);
-    dbConnection.query("SELECT * FROM customers;", function (error, result, fields){
-     console.log(result);
-     console.log(fields);
-     console.log(error);
-    //result.release();
- });
+ //    dbConnection.query("SELECT * FROM customers;", function (error, result, fields){
+ //     console.log(result);
+ //     console.log(fields);
+ //     console.log(error);
+ //    //result.release();
+ // });
 });
 
 const apiProxy = createProxyMiddleware('/', {
