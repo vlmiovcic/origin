@@ -19,16 +19,17 @@ const app = express();
 app.use(cors());
 
 app.get('/api', (req, res) => {
-    dbConnection.query("SELECT * FROM products;", function (error, result, fields){
-        console.log(result);
-        // console.log(fields);
-        // console.log(error);
-        //result.release();
-        res.json({result});
-    });
-  //   console.log("app.get('/api':", test);
-  // res.json({0:'test'});
+    let requestParams = req.query;
+    if(requestParams['products'] === 'all' ){
+        dbConnection.query("SELECT * FROM products;", function (error, result, fields){
+            res.json(result);
+        });
+    }
 });
+
+app.get('/api/save', (req, res) => {
+    res.json('Hello save');
+})
 
 app.get('/upload', (req, res) => {
   res.json('Hello upload');
