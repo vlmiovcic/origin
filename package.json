@@ -3,7 +3,7 @@
    "version": "1.0.0",
    "description": "",
    "main": "index.js",
-   "homepage": "https://webserver.it-vladimirmiovcic.com",
+   "homepage": "https://serverhome.it-vladimirmiovcic.com",
    "scripts": {
       "test": "echo \"Error: no test specified\" && exit 1",
       "start": "export HTTPS=true&&SSL_CRT_FILE=sslcert/it-vladimirmiovcic.com.crt&&SSL_KEY_FILE=sslcert/it-vladimirmiovcic.com.key  node server/index.js"

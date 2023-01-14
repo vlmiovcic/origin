@@ -1,7 +1,7 @@
 {
   "server": {
-    "localcall": "https://10.0.29.79:3000",
-    "remotecall": "https://10.0.29.79:8090"
+    "localcall": "https://10.0.29.81:3000",
+    "remotecall": "https://10.0.29.81:8090"
   }
 }
 
