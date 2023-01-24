@@ -27,8 +27,10 @@ app.get('/api', (req, res) => {
     }
 });
 
-app.get('/api/save', (req, res) => {
-    res.json('Hello save');
+app.post('/save', (req, res) => {
+    console.log('requestbody',req.body);
+    console.log('request',req.query);
+    res.json({'message':'Hello save', 'request':req.query, 'requestbody':req.body});
 })
 
 app.get('/upload', (req, res) => {
