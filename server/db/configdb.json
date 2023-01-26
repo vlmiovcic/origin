@@ -4,5 +4,15 @@
     "host": "localhost",
     "user": "vm",
     "password": "uHn-,nBc39PP"
+  },
+  "server": {
+    "localcall": "https://10.0.29.81:3000",
+    "remotecall": "https://10.0.29.81:8090"
+  },
+  "api": {
+    "save": "/save",
+    "update": "/api/update",
+    "delete": "/api/delete",
+    "get": "/api"
   }
 }

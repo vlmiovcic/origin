@@ -7,6 +7,8 @@ const privKey = fs.readFileSync('sslcert/it-vladimirmiovcic.com.key','utf8');
 const cert = fs.readFileSync('sslcert/it-vladimirmiovcic.com.crt', 'utf8');
 const PORT = process.env.PORT || 4043;
 const dbConnection = require('./db/home');
+const dbConfig = require('./db/configdb.json');
+const bodyParser = require('body-parser');
 
 
 const options = {
@@ -16,7 +18,22 @@ const options = {
 
 
 const app = express();
-app.use(cors());
+// app.use(cors({})); can be used to restrict access
+app.use(bodyParser.json({limit:'6mb'}));
+app.use(bodyParser.urlencoded({extended:true,limit:'6mb'}))
+// set headers
+app.use(function (request, response, next) {
+
+    response.setHeader('Access-Control-Allow-Origin', dbConfig.server.localcall);
+    //
+    response.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, PATCH, DELETE');
+    //
+    response.setHeader('Access-Control-Allow-Headers', 'X-Requested-With,content-type');
+    //
+    response.setHeader('Access-Control-Allow-Credentials', true);
+    //
+    next();
+});
 
 app.get('/api', (req, res) => {
     let requestParams = req.query;
@@ -28,9 +45,8 @@ app.get('/api', (req, res) => {
 });
 
 app.post('/save', (req, res) => {
-    console.log('requestbody',req.body);
-    console.log('request',req.query);
-    res.json({'message':'Hello save', 'request':req.query, 'requestbody':req.body});
+    console.log('req.body.mail:',req.body);
+    res.json({'message':'Hello save', 'request':req.query, 'req.body.mail':req.body});
 })
 
 app.get('/upload', (req, res) => {
