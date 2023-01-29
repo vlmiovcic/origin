@@ -22,17 +22,18 @@ module.exports = (sequelize, Sequelize, DataTypes) => {
             type: DataTypes.STRING(200),
             allowNull: false
         },
-        created: {
-            type: DataTypes.DATETIME,
-            defaultValue: DataTypes.NOW
-        },
-        edited: {
-            type: DataTypes.DATETIME,
-            defaultValue: DataTypes.NOW,
-        },
         status: {
             type: DataTypes.BOOLEAN,
-            allowNull: false
-        }
+            allowNull: false,
+            defaultValue: true
+        },
+        createdAt: {
+            type: Sequelize.DATE,
+            defaultValue: Sequelize.fn('NOW'),
+        },
+        updatedAt: {
+            type: Sequelize.DATE,
+            defaultValue: Sequelize.fn('NOW'),
+        },
     });
 };

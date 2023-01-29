@@ -20,6 +20,7 @@
     "save": "/save",
     "update": "/api/update",
     "delete": "/api/delete",
-    "get": "/api"
+    "get": "/api",
+    "default": "/api/inquiries"
   }
 }

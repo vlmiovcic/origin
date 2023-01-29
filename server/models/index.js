@@ -14,12 +14,9 @@ const sequelize = new Sequelize(dbConfig.db.name, dbConfig.db.user, dbConfig.db.
 });
 
 const db = {};
-
 db.Sequelize = Sequelize;
 db.sequelize = sequelize;
 db.DataTypes = DataTypes;
 
-
 db.inquiries = require("./inquiries.model.js")(sequelize, Sequelize, DataTypes);
-
 module.exports = db;
