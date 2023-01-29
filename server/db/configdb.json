@@ -3,7 +3,14 @@
     "name": "home",
     "host": "localhost",
     "user": "vm",
-    "password": "uHn-,nBc39PP"
+    "password": "uHn-,nBc39PP",
+    "dialect": "mysql",
+    "pool": {
+      "max": 5,
+      "min": 0,
+      "acquire": 30000,
+      "idle": 10000
+    }
   },
   "server": {
     "localcall": "https://10.0.29.81:3000",
