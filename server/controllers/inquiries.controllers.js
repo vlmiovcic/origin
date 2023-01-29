@@ -3,14 +3,17 @@ const Inquiries = db.inquiries;
 
 exports.create = (req, res) => {
     let requestData = req.body;
+    console.log("exports.create = (req, res):", requestData);
     let inquiriesData = {
         'name': requestData.username,
         'message': requestData.usermessage,
         'mail': requestData.usermail,
         'subject': requestData.usersubject
     };
+    console.log("exports.create = (req, res):inquiriesData:", inquiriesData);
     Inquiries.create(inquiriesData)
         .then(data => {
+            console.log("Inquiries.create(inquiriesData):", data);
             res.send(data);
         })
         .catch(error => {

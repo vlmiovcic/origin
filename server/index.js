@@ -9,6 +9,7 @@ const PORT = process.env.PORT || 4043;
 const dbConnection = require('./db/home');
 const dbConfig = require('./db/configdb.json');
 const bodyParser = require('body-parser');
+const appInquires = require('./routes/inquiries.routes');
 
 
 const options = {
@@ -56,7 +57,7 @@ app.get('/upload', (req, res) => {
 const httpsServer = https.createServer({
   key: options.key,
   cert: options.cert,
-}, app);
+}, appInquires);
 
 httpsServer.listen(PORT, () => {
     console.log('HTTPS Server running on port ' + PORT);
