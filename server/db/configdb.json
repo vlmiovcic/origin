@@ -21,6 +21,6 @@
     "update": "/api/update",
     "delete": "/api/delete",
     "get": "/api",
-    "default": "/api/inquiries"
+    "default": "/api"
   }
 }

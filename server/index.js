@@ -4,9 +4,7 @@ const { createProxyMiddleware } = require('http-proxy-middleware');
 const privKey = fs.readFileSync('sslcert/it-vladimirmiovcic.com.key','utf8');
 const cert = fs.readFileSync('sslcert/it-vladimirmiovcic.com.crt', 'utf8');
 const PORT = process.env.PORT || 4043;
-const appInquires = require('./routes/inquiries.routes');
-const app = appInquires.app;
-
+const app = require('./routes/general.routes');
 
 const options = {
   key: privKey,

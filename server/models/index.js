@@ -19,4 +19,5 @@ db.sequelize = sequelize;
 db.DataTypes = DataTypes;
 
 db.inquiries = require("./inquiries.model.js")(sequelize, Sequelize, DataTypes);
+db.products = require("./products.model.js")(sequelize, Sequelize, DataTypes);
 module.exports = db;

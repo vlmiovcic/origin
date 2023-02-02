@@ -30,7 +30,7 @@ exports.findAll = (req, res) => {
             res.status(500).send(
                 {
                     message:
-                    error.message + ' Inquiries coudn"t be queried.'
+                        error.message + ' Inquiries coudn"t be queried.'
                 }
             );
         });
@@ -38,19 +38,20 @@ exports.findAll = (req, res) => {
 
 exports.findOne = (req, res) => {
     Inquiries.findAll({
-        where: req.params.mail ?? -1
+        where: {
+            mail: req.params.mail ?? -1
+        }
+    }).then(data => {
+        res.send(data);
     })
-        .then(data => {
-            res.send(data);
-        })
-        .catch(error => {
-            res.status(500).send(
-                {
-                    message:
-                        error.message + ' Inquirie coudn"t be queried.'
-                }
-            );
-        });
+    .catch(error => {
+        res.status(500).send(
+            {
+                message:
+                    error.message + ' Inquirie coudn"t be queried.'
+            }
+        );
+    });
 };
 
 exports.update = (req, res) => {
@@ -78,7 +79,8 @@ exports.update = (req, res) => {
 
 exports.delete = (req, res) => {
     let data = req.params.data;
-    Inquiries.destroy({where: {
+    Inquiries.destroy({
+        where: {
             mail: (!data) ? -1 : data.usermail
         }
     })
