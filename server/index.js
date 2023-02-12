@@ -3,8 +3,10 @@ const https = require("https");
 const { createProxyMiddleware } = require('http-proxy-middleware');
 const privKey = fs.readFileSync('sslcert/it-vladimirmiovcic.com.key','utf8');
 const cert = fs.readFileSync('sslcert/it-vladimirmiovcic.com.crt', 'utf8');
+const process = require('process');
 const PORT = process.env.PORT || 4043;
 const app = require('./routes/general.routes');
+
 
 const options = {
   key: privKey,
@@ -30,7 +32,3 @@ httpsServer.listen(PORT, () => {
     console.log('HTTPS Server running on port ' + PORT);
 });
 
-const apiProxy = createProxyMiddleware('/', {
-  target: 'https://serverhome.it-vladimirmiovcic.com:4043',
-  changeOrigin: true,
-});
