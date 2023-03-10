@@ -6,3 +6,4 @@ test.txt
 .env.development
 client/.env.development
 package-lock.json
+.ssh
