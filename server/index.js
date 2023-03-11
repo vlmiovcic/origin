@@ -12,8 +12,6 @@ const options = {
     key: privKey,
     cert: cert
 };
-let test = 1;
-console.log(test);
 
 const dbInquiries = require("./models");
 dbInquiries.sequelize.sync()
