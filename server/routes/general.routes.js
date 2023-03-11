@@ -14,7 +14,7 @@ app.use(function (request, response, next) {
     //
     response.setHeader('Access-Control-Allow-Headers', 'X-Requested-With,content-type');
     //
-    response.setHeader('Access-Control-Allow-Credentials', true);
+    response.setHeader('Access-Control-Allow-Credentials', 1);
     //
     next();
 });
