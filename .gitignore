@@ -4,7 +4,6 @@ sslcert/it-vladimirmiovcic.com.key
 .idea
 test.txt
 .env.development
-client/.env.development
 package-lock.json
 .ssh
 .vscode
