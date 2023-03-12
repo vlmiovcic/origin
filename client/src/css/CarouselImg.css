@@ -1,0 +1,68 @@
+
+#loginModalCarouselOuter .carouselImgMain{
+    width: 100%;
+    max-width: 100%;
+    height: 40vh;
+    max-height: 40vh;
+
+}
+
+.carouselImgMain .carousel-indicators{
+    width: 70%;
+    max-width: 70%;
+}
+
+.carouselImgMain .carousel-inner{
+    width: 100%;
+    max-width: 100%;
+    height: 40vh;
+    max-height: 40vh;
+}
+
+#carouselImgItemOne{
+    width: 100%;
+    max-width: 100%;
+}
+
+#carouselImgItemOne img{
+    float: top;
+    height: 50vh;
+    max-height: 43vh;
+    background-color: #D6dcd2;
+}
+
+#carouselImgItemTwo{
+    width: 100%;
+    max-width: 100%;
+}
+
+#carouselImgItemTwo img{
+    float: top;
+    height: 50vh;
+    max-height: 50vh;
+    background-color: #D8dee0;
+}
+
+#carouselImgItemThree{
+    width: 100%;
+    max-width: 100%;
+}
+
+#carouselImgItemThree img{
+    float: top;
+    height: 50vh;
+    max-height: 40vh;
+    background-color: #Cec1ae;
+}
+
+.carouselImgItemOne{
+    max-width: 30vw;
+}
+
+.carouselImgItemTwo{
+    max-width: 30vw;
+}
+
+.carouselImgItemThree{
+    max-width: 30vw;
+}

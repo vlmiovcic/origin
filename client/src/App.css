@@ -1,0 +1,831 @@
+.App {
+    text-align: center;
+}
+
+.App-logo {
+    height: 40vmin;
+    pointer-events: none;
+}
+
+.App-logo-small{
+    height: 12vmin;
+    pointer-events: none;
+    width: 20vmin;
+    border-radius: 85mm;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+    .App-logo {
+        animation: App-logo-spin infinite 20s linear;
+    }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+    .App-logo-small{
+        animation: App-logo-spin infinite 20s linear;
+    }
+}
+
+.App-header {
+    background-color: #434956;
+    position: fixed;
+    z-index: 30;
+    top:0;
+    left:0;
+    right:0;
+    padding: 0;
+    margin:0;
+}
+
+#menuHeader #menuHeaderLinkContent {
+    text-align:left;
+    padding-left:3mm;
+}
+
+#menuHeader #menuHeaderLinkContent a{
+    color:#434956;
+}
+
+#menuHeader #menuHeaderLinkContent a:hover{
+    color:#e2e4e9;
+}
+
+#menuHeader div:nth-child(2){
+    /* here can be placed content if necessary */
+}
+
+#userMenuHeader{
+    border: 1px solid #434956;
+    color: #434956;
+}
+
+#userMenuHeader:hover{
+    border: 1px solid #e2e4e9;
+    color: #e2e4e9;
+}
+
+#navBarContent>div>div{
+    background-color: #9ba2b0;
+}
+
+#navBarContent>div>div a{
+    background-color: #707a8f;
+}
+
+.loginModal div:first-child{
+    width: 60vw;
+    max-width: 60vw;
+}
+
+#navBarContent>div>div a:hover{
+    background-color: #e2e4e9;
+}
+
+.App-main {
+    display: block;
+    font-size: calc(10px + 2vmin);
+    height:100%;
+    min-height: 100vh;
+}
+
+.App-main .main-section-presentation{
+    height: 100%;
+    min-height: 100vh;
+    max-height: 100%;
+    box-shadow: 0 12px 21px #b7bcc8;
+    background-color: #434956;
+    overflow: hidden;
+    z-index:3;
+    animation-name: moveBg;
+    animation-duration: 12s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+#main-section-presentation #presentation-label{
+   color: white;
+    width: 100%;
+    min-width: 100%;
+    font-family: -apple-system, BlinkMacSystemFont,
+    “Segoe UI”, “Roboto”, “Oxygen”,
+    “Ubuntu”, “Cantarell”, “Fira Sans”,
+    “Droid Sans”, “Helvetica Neue”, sans-serif;
+}
+
+#main-section-presentation #presentation-label p:first-child{
+    font-size: calc(28pt + 2vmin);
+    font-weight: bold;
+
+}
+
+#main-section-presentation #presentation-label p:nth-child(2){
+    font-size: calc(24pt + 2vmin);
+    font-weight: 600;
+}
+
+#main-section-presentation #presentation-label div{
+        margin-top: 8mm;
+    font-size: calc(24pt + 2vmin);
+}
+
+#main-section-presentation #presentation-label div a
+{
+    color: #434956;
+    font-size: calc(26pt + 2vmin);
+}
+
+#main-section-presentation #presentation-label div a:hover
+{
+    color:white;
+    font-size: calc(26pt + 2vmin);
+}
+
+#main-section-presentation .container
+{
+    margin-top: 9.5%;
+    width: 100%;
+    min-width: 100%;
+    max-width: 100%;
+    text-align: center;
+}
+
+@keyframes moveBg{
+    33% {
+        background-color: #8d95a5;
+    }
+
+    66% {
+        background-color: #434956;
+    }
+}
+
+.App-main .main-section-services{
+    min-height: 100vh;
+    position: relative;
+    padding: 70px 0 80px;
+    z-index:2;
+    animation-name: moveServicesBg;
+    animation-duration: 12s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+#main-section-services .container {
+width:100%;
+min-width:100%;
+padding-left: 4mm;
+padding-right: 4mm;
+
+
+}
+
+#main-section-services #services-text-content{
+font-size: 21pt !important;
+max-width: 65% !important;
+width: 65% !important;
+}
+
+#main-section-services .container .row .col{
+top:20mm;
+}
+
+.App-main .main-section-services #model3dObject{
+width:50vw;
+height: 50vw;
+animation: 6s spinMonkeyObject linear infinite;
+}
+
+@keyframes spinMonkeyObject{
+to {
+    transform: rotateY(1turn);
+}
+}
+
+@keyframes moveServicesBg{
+33% {
+    background-color: #b7bcc8;
+}
+
+66% {
+    background-color: #646d82;
+}
+}
+
+.App-main .main-section-about{
+    display: block;
+    padding: 70px 0 80px;
+    padding-top: 25mm;
+    padding-bottom: 25mm;
+    min-height: 100vh;
+    position: relative;
+    box-shadow: -4px 11px 21px #b7bcc8;
+    z-index: 2;
+    background-color: #434956;
+    animation-name: moveBg;
+    animation-duration: 12s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    font-family: -apple-system, BlinkMacSystemFont,
+    “Segoe UI”, “Roboto”, “Oxygen”,
+    “Ubuntu”, “Cantarell”, “Fira Sans”,
+    “Droid Sans”, “Helvetica Neue”, sans-serif;
+
+}
+
+.main-section-about #section-about-label{
+    color: white;
+    font-size: calc(28pt + 2vmin);
+}
+
+.App-main .main-section-about #section-about-content{
+    background: #434956 url("./img/about.jpg") no-repeat center center;
+    width: 100%;
+    min-width: 100%;
+    height: 80vh;
+    min-height: 80vh;
+    background-size: 60%;
+}
+
+.App-main .main-section-contact{
+    display: block;
+    padding: 57px 0 80px;
+    min-height: 100vw;
+    position: relative;
+    background-color: #646d82;
+    z-index: 1;
+    animation-name: moveServicesBg;
+    animation-duration: 12s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+.main-section-contact #section-contact-container{
+    padding:0;
+}
+
+#section-contact-container #contact-row-header{
+    background: #646d82 url("img/contact.jpg") no-repeat center center;
+    height: 40vh;
+    min-height: 40vh;
+    background-size: 100vw;
+    width: 100%;
+    min-width: 100%;
+    margin: 0;
+}
+
+#contact-row-main #frm-contact-label{
+    margin-top: 12mm;
+}
+
+#contact-row-main #frm-contact-label div:first-child{
+    padding-left: 21vh;
+    text-align: left;
+}
+
+#contact-row-main #frm-contact-label div:nth-child(2){
+    padding-left: 42.5vh;
+    text-align: left;
+}
+
+#frm-contact-content #frm-inner-row1 div:first-child #inner-row-phone{
+    width: 21vw;
+    margin-left: 10vw;
+    max-width: 21vw;
+    border-bottom: rgba(255,255,255,.5);
+}
+
+#frm-contact-content #frm-inner-row1 div:first-child #inner-row-phone div:first-child{
+    width: 8vh;
+    height: 10vh;
+    max-height: 10vh;
+    max-width: 8vh;
+}
+
+#frm-contact-content #frm-inner-row1 div:first-child #inner-row-phone div:nth-child(2){
+    margin: 0;
+    max-width: 24vw;
+    width: 24vw;
+    padding:0;
+    height:10vh;
+}
+
+#frm-contact-content #frm-inner-row1 div:first-child #inner-row-phone div:nth-child(2) div:nth-child(2){
+    padding:0;
+    max-width: 14vw;
+    width: 14vw;
+    margin:0;
+    height:4vh;
+    max-height: 4vh;
+    text-align: left;
+}
+
+#frm-contact-content #frm-inner-row1 div:first-child #inner-row-phone div:nth-child(2) div:nth-child(2) a:hover{
+    color:#e2e4e9;
+}
+
+#frm-contact-content #frm-inner-row1 div:first-child #inner-row-phone div:nth-child(2) div:nth-child(2) a{
+    color:#212529;
+}
+
+#frm-contact-content #frm-inner-row1 div:first-child #inner-row-phone div:nth-child(2) div:first-child{
+    max-height: 4vh;
+    height:4vh;
+
+}
+
+#inner-row-phone #phoneIcon{
+    padding:0;
+}
+
+#inner-row-phone #phoneIcon svg{
+    border: 1px solid white;
+    width: 6vh;
+    max-width: 6vh;
+    margin: 3vh 0 0 0;
+    height: 5vh;
+    max-height: 5vh;
+    border-radius: 30%;
+    color:white;
+}
+
+#frm-contact-content #frm-inner-row1 div:first-child div:nth-child(2){
+    width: 16vw;
+    margin-left: 19.8vh;
+}
+
+#frm-contact-content #frm-inner-row1 div:first-child div:nth-child(2) div:first-child{
+    text-align: left;
+    padding-left: 0;
+    font-weight: 600;
+}
+
+#frm-contact-content #frm-inner-row1 div:first-child div:nth-child(2) div:nth-child(2){
+
+}
+
+#frm-contact-content #frm-inner-row1 div:nth-child(2) #inner-row-mail{
+    width: 23vw;
+    margin-left: 6vw;
+    max-width: 23vw;
+    border-bottom: rgba(255,255,255,.5);
+}
+
+#frm-contact-content #frm-inner-row1 div:nth-child(2) #inner-row-mail div:first-child{
+    width: 10vh;
+    height: 10vh;
+    max-height: 10vh;
+    max-width: 10vh;
+}
+
+#frm-contact-content #frm-inner-row1 div:nth-child(2) #inner-row-mail div:nth-child(2){
+    margin: 0;
+    max-width: 24vw;
+    width: 24vw;
+    padding:0;
+    height:10vh;
+    max-height: 10vh;
+}
+
+#frm-contact-content #frm-inner-row1 div:nth-child(2) #inner-row-mail div:nth-child(2) div:first-child{
+    max-height: 4vh;
+    height:4vh;
+}
+
+#frm-contact-content #frm-inner-row1 div:nth-child(2) #inner-row-mail div:nth-child(2) div:nth-child(2){
+    padding:0;
+    max-width: 19vw;
+    width: 19vw;
+    margin:0;
+    height:4vh;
+    max-height: 4vh;
+    text-align: left;
+}
+
+#frm-contact-content #frm-inner-row1 div:nth-child(2) #inner-row-mail div:nth-child(2) div:nth-child(2) a:hover{
+    color:#e2e4e9;
+}
+
+#frm-contact-content #frm-inner-row1 div:nth-child(2) #inner-row-mail div:nth-child(2) div:nth-child(2) a{
+    color:#212529;
+}
+
+#inner-row-mail #mailIcon{
+    padding:0;
+}
+
+#inner-row-mail #mailIcon svg{
+    border: 1px solid white;
+    width: 6vh;
+    max-width: 6vh;
+    margin: 3vh 0 0 0;
+    height: 5vh;
+    max-height: 5vh;
+    border-radius: 30%;
+    color:white;
+}
+
+#frm-contact-content #frm-inner-row1 div:nth-child(3) #inner-row-address{
+    width: 23vw;
+    margin-left: 4vw;
+    max-width: 23vw;
+}
+
+#frm-contact-content #frm-inner-row1 div:nth-child(3) #inner-row-address div:first-child{
+    width: 14vh;
+    height: 10vh;
+    max-height: 10vh;
+    max-width: 14vh;
+    font-weight: 600;
+    padding-left:0;
+}
+
+#frm-contact-content #frm-inner-row1 div:nth-child(3) #inner-row-address div:nth-child(2){
+    margin: 0;
+    max-width: 24vw;
+    width: 24vw;
+    padding:0;
+    height:10vh;
+    font-size: calc(10px + 1vmin);;
+}
+
+#frm-contact-content #frm-inner-row1 div:nth-child(3) #inner-row-address #address-content div{
+    font-weight: 400;
+    padding-left: 0;
+}
+
+#frm-contact-content #frm-inner-row1 div:nth-child(3) #inner-row-address #address-content div:first-child{
+    margin-top: 1vh;
+}
+
+#frm-contact-content #frm-inner-row1 div:nth-child(3) #inner-row-address #address-content div:nth-child(2){
+    margin-top: -1vh;
+}
+
+#frm-contact-content #frm-inner-row1 div:nth-child(3) #inner-row-address div:nth-child(2) div:first-child{
+    max-height: 4vh;
+    height:4vh;
+    width: 19vh;
+    max-width: 19vh;
+}
+
+#frm-contact-content #frm-inner-row1 div:nth-child(3) #inner-row-address div:nth-child(2) div:nth-child(2){
+    padding:0;
+    max-width: 14vw;
+    width: 14vw;
+    margin:0;
+    height:4vh;
+    max-height: 4vh;
+    text-align: left;
+}
+
+#frm-contact-content #frm-inner-row2{
+    border-bottom: 1px solid #e2e4e9;
+    width: 78vw;
+    max-width: 78vw;
+    margin-left: 9vw;
+}
+
+#frm-contact-content #frm-inner-main-content{
+    width: 55vw;
+    max-width: 55vw;
+    margin-left: 9vw;
+    margin-top: 3vh;
+    padding: 0;
+}
+
+#frm-contact-content #frm-inner-main-content #username-content{
+    width: 100vw;
+    max-width: 100vw;
+    height: 12vh;
+    max-height: 12vh;
+    margin-top:0;
+    padding-left: 2vw;
+    padding-right: 2vw;
+}
+
+#frm-contact-content #frm-inner-main-content #username-content label{
+    float:left;
+    width: 40vw;
+    max-width: 40vw;
+    margin-right:2vw;
+    text-align: left;
+}
+
+#frm-contact-content #frm-inner-main-content #username-content input{
+    width: 51vw;
+    max-width: 51vw;
+    height: 6vh;
+    max-height: 6vh;
+}
+
+#frm-contact-content #frm-inner-main-content #usermail-content{
+    width: 100vw;
+    max-width: 100vw;
+    height: 12vh;
+    max-height: 12vh;
+    margin-top:1vh;
+    padding-left: 2vw;
+    padding-right: 2vw;
+}
+
+#frm-contact-content #frm-inner-main-content #usermail-content label{
+    float: left;
+    width: 40vw;
+    max-width: 40vw;
+    margin-right:2vw;
+    text-align: left;
+}
+
+#frm-contact-content #frm-inner-main-content #usermail-content input{
+    width: 51vw;
+    max-width: 51vw;
+    height: 6vh;
+    max-height: 6vh;
+}
+
+#frm-contact-content #frm-inner-main-content #usersubject-content{
+    width: 100vw;
+    max-width: 100vw;
+    height: 12vh;
+    max-height: 12vh;
+    margin-top:1vh;
+    padding-left: 2vw;
+    padding-right: 2vw;
+}
+
+#frm-contact-content #frm-inner-main-content #usersubject-content label{
+    float:left;
+    width: 40vw;
+    max-width: 40vw;
+    margin-right:2vw;
+    text-align: left;
+}
+
+#frm-contact-content #frm-inner-main-content #usersubject-content input{
+    width: 51vw;
+    max-width: 51vw;
+    height: 6vh;
+    max-height: 6vh;
+}
+
+#frm-contact-content #frm-inner-main-content #usermessage-content{
+    width: 100vw;
+    max-width: 100vw;
+    height: 12vh;
+    max-height: 12vh;
+    margin-top:1vh;
+    padding-left: 2vw;
+    padding-right: 2vw;
+}
+
+#frm-contact-content #frm-inner-main-content #usermessage-content label{
+    float:left;
+    width: 40vw;
+    max-width: 40vw;
+    margin-right:2vw;
+    text-align: left;
+}
+
+#frm-contact-content #frm-inner-main-content #usermessage-content textarea{
+    width: 51vw;
+    max-width: 51vw;
+    height: 14vh;
+    max-height: 14vh;
+}
+
+#frm-contact-content #frm-inner-main-content #button-content{
+    width: 100vw;
+    max-width: 100vw;
+    height: 12vh;
+    max-height: 12vh;
+    margin-top:13vh;
+    padding-left: 2vw;
+    padding-right: 2vw;
+}
+
+#frm-contact-content #frm-inner-main-content #button-content button{
+    float:left;
+    background-color: #434956;
+    color:#b7bcc8;
+    min-width: 8vw;
+}
+
+#frm-contact-content #frm-inner-main-content #button-content button:hover{
+    float:left;
+    background-color: #b7bcc8;
+    color:#434956;
+}
+
+#section-contact-container #contact-row-header #section-contact-label{
+    width: 10vh;
+    min-width:10vh;
+    margin-left: 12vh;
+    font-weight: bold;
+    color: white;
+    margin-top: 4vh;
+}
+
+.invalid-feedback.d-block{
+    text-align: left;
+}
+
+.App-footer {
+    background-color: #282c34;
+    min-height: 20vh;
+    display: flex;
+    flex:0 0 auto;
+    align-items: center;
+    justify-content: center;
+    font-size: calc(10px + 2vmin);
+    color: white;
+    overflow-y:hidden;
+}
+
+.App-link {
+color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+from {
+    transform: rotate(0deg);
+}
+to {
+    transform: rotate(360deg);
+}
+}
+
+#scene1 {
+width: 100%;
+height: 100%;
+display: block;
+background: url("scene1background.jpg") no-repeat center center;
+background-size: cover;
+}
+
+#main-section-services{
+padding-left:4mm !important;
+}
+
+#container1 {
+position: relative;
+width: 33%;
+height: 33%;
+overflow: hidden;
+top: 0;
+
+}
+#labels1 {
+position: absolute;
+left: 0;
+top: 0;
+color: white;
+}
+#labels1>div {
+position: absolute;
+left: 0;
+top: 0;
+cursor: pointer;
+font-size: 22pt;
+user-select: none;
+text-shadow:
+        -1px -1px 0 #000,
+        0   -1px 0 #000,
+        1px -1px 0 #000,
+        1px  0   0 #000,
+        1px  1px 0 #000,
+        0    1px 0 #000,
+        -1px  1px 0 #000,
+        -1px  0   0 #000;
+}
+
+#labels1 div:nth-child(2) {
+left: -8mm !important;
+}
+
+#labels1 div:nth-child(5) {
+left: -8mm !important;
+}
+
+#labels1>div:hover {
+color: grey;
+}
+
+/*---------------------------------------------*/
+
+#scene2 {
+    width: 100%;
+    height: 100%;
+    display: block;
+    background: url("scene2background.jpg") no-repeat center center;
+    background-size: cover;
+}
+#container2 {
+    position: relative;
+    width: 33%;
+    height: 33%;
+    overflow: hidden;
+    top: 0;
+}
+
+#labels2 {
+    position: absolute;
+    left: 0;
+    top: 0;
+    color: white;
+}
+#labels2>div {
+    position: absolute;
+    left: 0;
+    top: 0;
+    cursor: pointer;
+    font-size: 22pt;
+    user-select: none;
+    text-shadow:
+            -1px -1px 0 #000,
+            0   -1px 0 #000,
+            1px -1px 0 #000,
+            1px  0   0 #000,
+            1px  1px 0 #000,
+            0    1px 0 #000,
+            -1px  1px 0 #000,
+            -1px  0   0 #000;
+}
+
+#labels2 div:nth-child(2) {
+    left: -8mm !important;
+}
+
+#labels2 div:nth-child(5) {
+    left: -8mm !important;
+}
+
+#labels3 div:nth-child(3) {
+    left: 5.5mm !important;
+}
+
+#labels2>div:hover {
+    color: grey;
+}
+/*--------------------------------*/
+/*---------------------------------------------*/
+#scene3 {
+    width: 100%;
+    height: 100%;
+    display: block;
+    background: url("scene3background.jpg") no-repeat center center;
+    background-size: cover;
+}
+#container3 {
+    position: relative;
+    width: 33%;
+    height: 33%;
+    overflow: hidden;
+    left: 0;
+    top: 0;
+}
+#labels3 {
+    position: absolute;
+    left: 0;
+    top: 0;
+    color: white;
+}
+#labels3>div {
+    position: absolute;
+    left: 0;
+    top: 0;
+    cursor: pointer;
+    font-size: 22pt;
+    user-select: none;
+    text-shadow:
+            -1px -1px 0 #000,
+            0   -1px 0 #000,
+            1px -1px 0 #000,
+            1px  0   0 #000,
+            1px  1px 0 #000,
+            0    1px 0 #000,
+            -1px  1px 0 #000,
+            -1px  0   0 #000;
+}
+
+#labels3 div:nth-child(2) {
+    left: -8mm !important;
+}
+
+#labels3 div:nth-child(5) {
+    left: -8mm !important;
+}
+
+#labels3 div:nth-child(3) {
+    left: 5.5mm !important;
+}
+
+#labels3>div:hover {
+    color: grey;
+}
+/*--------------------------------*/
+
+#productsContent.table-responsive{
+    margin-top: 30mm !important;
+    text-align: left !important;
+}
+
