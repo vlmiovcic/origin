@@ -7,3 +7,4 @@ test.txt
 client/.env.development
 package-lock.json
 .ssh
+.vscode
