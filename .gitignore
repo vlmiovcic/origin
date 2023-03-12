@@ -8,3 +8,4 @@ client/.env.development
 package-lock.json
 .ssh
 .vscode
+home_connection.session.sql
