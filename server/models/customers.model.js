@@ -1,31 +1,35 @@
 module.exports = (sequelize, Sequelize, DataTypes) => {
-    return sequelize.define("inquiries", {
+    return sequelize.define("customers", {
         id: {
             type: DataTypes.INTEGER,
             autoIncrement: true,
             primaryKey: true
         },
-        mail: {
-            type: DataTypes.STRING(90),
+        lastName: {
+            type: DataTypes.STRING(255),
             allowNull: false,
-            unique: true
         },
-        message: {
-            type: DataTypes.TEXT,
-            allowNull: false
+        firstName: {
+            type: DataTypes.STRING(255),
+            allowNull: false,
         },
-        name: {
-            type: DataTypes.STRING(185),
-            allowNull: false
+        fullName: {
+            type: DataTypes.STRING(255),
+            defaultValue: null,
         },
-        subject: {
-            type: DataTypes.STRING(200),
-            allowNull: false
+        phone: {
+            type: DataTypes.STRING(50),
+            defaultValue: null,
+        },
+        mail: {
+            type: DataTypes.STRING(50),
+            allowNull: false,
+            unique: true,
         },
         status: {
             type: DataTypes.BOOLEAN,
             allowNull: false,
-            defaultValue: true
+            defaultValue: true,
         },
         createdAt: {
             type: Sequelize.DATE,

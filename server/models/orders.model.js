@@ -1,23 +1,36 @@
+const customersModel = require("./customers.model");
+const usersModel = require("./users.model");
+
 module.exports = (sequelize, Sequelize, DataTypes) => {
-    return sequelize.define("products", {
+    return sequelize.define("orders", {
         id: {
             type: DataTypes.INTEGER,
             autoIncrement: true,
             primaryKey: true
         },
         name: {
-            type: DataTypes.STRING(200),
+            type: DataTypes.STRING(250),
             allowNull: false,
-            unique: true,
         },
         description: {
             type: DataTypes.TEXT,
-            allowNull: false
-        },
-        status: {
-            type: DataTypes.BOOLEAN,
             allowNull: false,
-            defaultValue: false,
+        },
+        customers_id: {
+            type: DataTypes.INTEGER,
+            allowNull: false,
+            references: {
+                model: customersModel,
+                key: id,
+            },
+        },
+        users_id: {
+            type: DataTypes.INTEGER,
+            allowNull: false,
+            references: {
+                model: usersModel,
+                key: id,
+            },
         },
         createdAt: {
             type: Sequelize.DATE,
