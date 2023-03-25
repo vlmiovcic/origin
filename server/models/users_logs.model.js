@@ -36,5 +36,6 @@ module.exports = (sequelize, Sequelize, DataTypes) => {
             }
         }
     });
+    
     return users_logs;
 };

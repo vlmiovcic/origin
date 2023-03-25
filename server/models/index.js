@@ -21,6 +21,7 @@ db.DataTypes = DataTypes;
 db.inquiries = require("./inquiries.model.js")(sequelize, Sequelize, DataTypes);
 db.products = require("./products.model.js")(sequelize, Sequelize, DataTypes);
 db.customers = require("./customers.model")(sequelize, Sequelize, DataTypes);
+
 db.customers_address = require("./customers_address.model")(sequelize, Sequelize, DataTypes);
 db.users = require("./users.model")(sequelize, Sequelize, DataTypes);
 db.orders = require("./orders.model")(sequelize, Sequelize, DataTypes);

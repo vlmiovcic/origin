@@ -59,4 +59,5 @@ module.exports = (sequelize, Sequelize, DataTypes) => {
     });
 
     return customers;
+    });
 };

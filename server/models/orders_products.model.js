@@ -7,8 +7,8 @@ module.exports = (sequelize, DataTypes) => {
     const orders_products = sequelize.define("orders_products", {
         products_id: {
             type: DataTypes.INTEGER,
-            allowNull: false,
-        },
+            allowNull: false
+        },        ,
         orders_id: {
             type: DataTypes.INTEGER,
             allowNull: false,
