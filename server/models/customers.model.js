@@ -1,5 +1,14 @@
+const { customers_address } = require('./customers_address.model');
+const {
+    inquiries
+} = require("./inquiries.model");
+const {
+    orders
+} = require("./orders.model");
+
+
 module.exports = (sequelize, Sequelize, DataTypes) => {
-    return sequelize.define("customers", {
+    let customers = sequelize.define("customers", {
         id: {
             type: DataTypes.INTEGER,
             autoIncrement: true,
@@ -39,5 +48,15 @@ module.exports = (sequelize, Sequelize, DataTypes) => {
             type: Sequelize.DATE,
             defaultValue: Sequelize.fn('NOW'),
         },
+    }, {
+        classMethods: {
+            associate: function(models) {
+                customers.hasMany(models.customers_address);
+                customers.hasMany(models.inquiries);
+                customers.hasMany(models.orders);
+            }
+        }
     });
+
+    return customers;
 };

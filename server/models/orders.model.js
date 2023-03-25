@@ -1,8 +1,15 @@
-const customersModel = require("./customers.model");
-const usersModel = require("./users.model");
+const {
+    customers
+} = require('./customers.model');
+const {
+    users
+} = require('./users.model');
+const {
+    orders_products
+} = require("./orders_products.model");
 
 module.exports = (sequelize, Sequelize, DataTypes) => {
-    return sequelize.define("orders", {
+    const orders = sequelize.define("orders", {
         id: {
             type: DataTypes.INTEGER,
             autoIncrement: true,
@@ -16,22 +23,6 @@ module.exports = (sequelize, Sequelize, DataTypes) => {
             type: DataTypes.TEXT,
             allowNull: false,
         },
-        customers_id: {
-            type: DataTypes.INTEGER,
-            allowNull: false,
-            references: {
-                model: customersModel,
-                key: id,
-            },
-        },
-        users_id: {
-            type: DataTypes.INTEGER,
-            allowNull: false,
-            references: {
-                model: usersModel,
-                key: id,
-            },
-        },
         createdAt: {
             type: Sequelize.DATE,
             defaultValue: Sequelize.fn('NOW'),
@@ -40,5 +31,15 @@ module.exports = (sequelize, Sequelize, DataTypes) => {
             type: Sequelize.DATE,
             defaultValue: Sequelize.fn('NOW'),
         },
+    }, {
+        classMethods: {
+            associate: function(models) {
+                orders.belongsTo(models.customers, { foreignKeyConstraint: true });
+                orders.belongsTo(models.users, { foreignKeyConstraint: true });
+                orders.hasMany(models.orders_products);
+            }
+        }
     });
+
+    return orders;
 };

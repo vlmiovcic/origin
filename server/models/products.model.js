@@ -1,5 +1,6 @@
+const { orders_products } = require('./orders_products.model');
 module.exports = (sequelize, Sequelize, DataTypes) => {
-    return sequelize.define("products", {
+    const products = sequelize.define("products", {
         id: {
             type: DataTypes.INTEGER,
             autoIncrement: true,
@@ -27,5 +28,13 @@ module.exports = (sequelize, Sequelize, DataTypes) => {
             type: Sequelize.DATE,
             defaultValue: Sequelize.fn('NOW'),
         },
+    }, {
+        classMethods: {
+            associate: function(models) {
+                products.hasMany(models.orders_products);
+            }
+        }
     });
+
+    return products;
 };

@@ -1,5 +1,9 @@
+const { orders } = require('./orders.model');
+const {
+    users_logs
+} = require('./users_logs.model');
 module.exports = (sequelize, Sequelize, DataTypes) => {
-    return sequelize.define("users", {
+    const users = sequelize.define("users", {
         id: {
             type: DataTypes.INTEGER,
             autoIncrement: true,
@@ -39,5 +43,13 @@ module.exports = (sequelize, Sequelize, DataTypes) => {
             type: Sequelize.DATE,
             defaultValue: Sequelize.fn('NOW'),
         },
+    }, {
+        classMethods: {
+            associate: function(models) {
+                users.hasMany(models.orders);
+                users.hasMany(models.users_logs);
+            }
+        }
     });
+    return users;
 };

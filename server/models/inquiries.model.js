@@ -1,5 +1,6 @@
+const { customers } = require('./customers.model');
 module.exports = (sequelize, Sequelize, DataTypes) => {
-    return sequelize.define("inquiries", {
+    const inquiries = sequelize.define("inquiries", {
         id: {
             type: DataTypes.INTEGER,
             autoIncrement: true,
@@ -35,5 +36,12 @@ module.exports = (sequelize, Sequelize, DataTypes) => {
             type: Sequelize.DATE,
             defaultValue: Sequelize.fn('NOW'),
         },
+    }, {
+        classMethods: {
+            associate: function(models) {
+                inquiries.belongsTo(models.customers, { foreignKeyConstraint: true });
+            }
+        }
     });
+    return inquiries;
 };

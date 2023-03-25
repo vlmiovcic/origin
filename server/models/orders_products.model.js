@@ -1,23 +1,26 @@
-const ordersModel = require("./orders.model");
-const productsModel = require("./products.model");
+const {
+    orders
+} = require("./orders.model");
+const products = require('./products.model');
 
 module.exports = (sequelize, DataTypes) => {
-    return sequelize.define("orders_products", {
+    const orders_products = sequelize.define("orders_products", {
         products_id: {
             type: DataTypes.INTEGER,
             allowNull: false,
-            references: {
-                model: productsModel,
-                key: id,
-            },
         },
         orders_id: {
             type: DataTypes.INTEGER,
             allowNull: false,
-            references: {
-                model: ordersModel,
-                key: id,
-            },
         },
+    }, {
+        classMethods: {
+            associate: function(models) {
+                orders_products.belongsTo(models.orders, { foreignKeyConstraint: true });
+                orders_products.belongsTo(models.products, { foreignKeyConstraint: true });
+            }
+        }
     });
+
+    return orders_products;
 };

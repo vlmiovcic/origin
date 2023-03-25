@@ -1,7 +1,9 @@
-const usersModel = require("./users.model");
+const {
+    users
+} = require("./users.model");
 
 module.exports = (sequelize, Sequelize, DataTypes) => {
-    return sequelize.define("users_logs", {
+    const users_logs = sequelize.define("users_logs", {
         id: {
             type: DataTypes.INTEGER,
             autoIncrement: true,
@@ -26,16 +28,13 @@ module.exports = (sequelize, Sequelize, DataTypes) => {
         updatedAt: {
             type: Sequelize.DATE,
             defaultValue: Sequelize.fn('NOW'),
-        },
-        users_id: {
-            type: DataTypes.INTEGER,
-            references: {
-                allowNull: false,
-                references: {
-                    model: usersModel,
-                    key: id,
-                },
+        }
+    }, {
+        classMethods: {
+            associate: function(models) {
+                users_logs.belongsTo(models.users, { foreignKeyConstraint: true });
             }
-        },
+        }
     });
+    return users_logs;
 };
