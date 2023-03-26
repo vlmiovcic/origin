@@ -1,7 +1,3 @@
-const { orders } = require('./orders.model');
-const {
-    users_logs
-} = require('./users_logs.model');
 module.exports = (sequelize, Sequelize, DataTypes) => {
     const users = sequelize.define("users", {
         id: {

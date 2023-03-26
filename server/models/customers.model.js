@@ -1,12 +1,3 @@
-const { customers_address } = require('./customers_address.model');
-const {
-    inquiries
-} = require("./inquiries.model");
-const {
-    orders
-} = require("./orders.model");
-
-
 module.exports = (sequelize, Sequelize, DataTypes) => {
     let customers = sequelize.define("customers", {
         id: {
