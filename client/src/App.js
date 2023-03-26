@@ -168,11 +168,14 @@ class App extends Component {
 
     async getProducts() {
         const response = await fetch(conf.api.getProducts);
+		console.log('response:', response);
         let products = {};
         await response.json().then(function (value) {
+			console.log('value:', value);
                 products = value;
             },
             function (error) {
+				console.log('error:', error);
                 console.error(error);
             });
 
