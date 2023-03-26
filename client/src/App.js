@@ -171,8 +171,7 @@ class App extends Component {
 		console.log('response:', response);
         let products = {};
         await response.json().then(function (value) {
-			console.log('value:', value);
-                products = value;
+                products = value.productColl;
             },
             function (error) {
 				console.log('error:', error);

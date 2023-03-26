@@ -1,60 +1,78 @@
-const db = require('../models');
-const products = db.products.sequelize;
+const { products } = require("../models");
 
-exports.create = (req, res) => {
-    // TODO: should be implemented
-    console.log('req: ', req);
-    console.log('res: ', res);
+const create = async (req, res) => {
+  try {
+    const product = await products.create(req.body);
+    return res.status(200).json({
+      product,
+    });
+  } catch (error) {
+    console.error(error);
+    return res.status(500).json({error: error.message});
+  }
+  // TODO: should be implemented
 };
 
-exports.findAll = (req, res) => {
-    console.log('req:', req);
-    console.log('res:', res);
-    products.findAll()
-        .then(data => {
-            console.log('data:', data);
-            res.send(data);
-        })
-        .catch(error => {
-            res.status(500).send({
-                message: error.message + ' Products coudn"t be queried.'
-            });
+const findAll = async (req, res) => {
+    try{
+        const productColl = await products.findAll(); 
+        return res.status(200).json({productColl});
+    }catch(error){
+        return res.status(500).json({error:error.message});
+    }
+};
+
+const findOne = async (req, res) => {
+  try {
+    const productItem = await products.findAll({
+      where: req.params.name ? req.params.name : -1,
+    });
+    return res.status(200).json({ productItem });
+  } catch (error) {
+    return res
+      .status(500)
+      .json({ error: error.message + ' Product could\'nt be queried.' });
+  }
+};
+
+const update = async (req, res) => {
+    try{
+        const {id} = req.params.id;
+        const {updated} = await products.update(req.body, {
+            where: {id: id}
         });
-};
-
-exports.findOne = (req, res) => {
-    products.findAll({
-            where: req.params.name ? req.params.name : -1
-        })
-        .then(data => {
-            res.send(data);
-        })
-        .catch(error => {
-            res.status(500).send({
-                message: error.message + ' Products coudn"t be queried.'
-            });
+        const updateMessage = 'Product couldn\'t be updated.';
+        if(updated){
+            updateMessage = 'Product is updated.';
+            const productItem = await products.findOne({where: {id:id}});
+        }
+        return res.status(200).json({
+            message: updateMessage,
+            product: !productItem ? null : productItem,
         });
+    }catch(error){
+        return res.status(500).json({error: error.message + ' Product couldn\'t be updated.'});
+    }
 };
 
-exports.update = (req, res) => {
-    // TODO: should be implemented
-    console.log('req: ', req);
-    console.log('res: ', res);
+const deleteProduct = async (req, res) => {
+    try{
+        let data = req.params.data;
+        const isDeleted = products.destroy({where:{id:data.id}})
+        const deletedMessage = 'Product isn\'t deleted.'
+        if(isDeleted){
+            deletedMessage = 'Product with the id: ' + data.id + ' is  deleted.';
+        }
+        return res.json(200).json({message:deletedMessaget});
+    }catch(error){
+        return res.status(500).json({error:error.message + ' Product couldn\'t be deleted.'});
+    }
 };
 
-exports.delete = (req, res) => {
-    let data = req.params.data;
-    products.destroy({
-            where: {
-                id: (!data) ? -1 : data.id
-            }
-        })
-        .then(data => {
-            res.send(data);
-        })
-        .catch(error => {
-            res.status(500).send({
-                message: error.message + ' Products coudn"t be deleted.'
-            })
-        })
+module.exports = {
+    deleteProduct,
+    update,
+    findOne, 
+    create,
+    findAll
 };
