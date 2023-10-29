@@ -42,7 +42,7 @@ module.exports = (sequelize, Sequelize, DataTypes) => {
     }, {
         classMethods: {
             associate: function(models) {
-                customers.hasMany(models.customers_address);
+                customers.hasMany(models.address);
                 customers.hasMany(models.inquiries);
                 customers.hasMany(models.orders);
             }

@@ -3,7 +3,7 @@
   <component name="WebServers">
     <option name="servers">
       <webServer id="afb81feb-98b6-46a6-8f55-b337fa5d68db" name="serverhome" url="https://pfHost">
-        <fileTransfer rootFolder="/usr/share/nginx/html/it-vladimirmiovcic.com" accessType="SFTP" host="192.168.1.21" port="2022" sshConfigId="e54779cb-997d-456c-85c8-610fecbf748e" sshConfig="vm@192.168.1.21:2022 password">
+        <fileTransfer accessType="SFTP" host="192.168.1.21" port="2022" sshConfigId="e54779cb-997d-456c-85c8-610fecbf748e" sshConfig="vm@192.168.1.21:2022 password">
           <advancedOptions>
             <advancedOptions dataProtectionLevel="Private" keepAliveTimeout="0" passiveMode="true" shareSSLContext="true" />
           </advancedOptions>

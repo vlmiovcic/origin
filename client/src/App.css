@@ -77,6 +77,11 @@
     max-width: 60vw;
 }
 
+.registrationModal div:first-child{
+    width: 60vw;
+    max-width: 60vw;
+}
+
 #navBarContent>div>div a:hover{
     background-color: #e2e4e9;
 }

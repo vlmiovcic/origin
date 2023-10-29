@@ -1,0 +1,64 @@
+#registrationModalContainer {
+    width: 60vw;
+    max-width: 60vw;
+    height: 40vh;
+    max-height: 40vh;
+    padding: 0;
+    margin: 0;
+}
+
+#registrationModalContainerInner {
+    padding: 0;
+    margin: 0;
+}
+
+#registrationModalCarouselOuter {
+    width: 60%;
+    max-width: 60%;
+    height: 40vh;
+    max-height: 40vh;
+    padding: 0;
+    margin: 0;
+}
+
+#registrationModalLoginOuter {
+    width: 42%;
+    max-width: 42%;
+    height: 40vh;
+    max-height: 40vh;
+    padding: 0;
+    margin: 0;
+    background-color: #f2f2f2;
+}
+
+.textCenter {
+    width: 60%;
+    max-width: 60%;
+    padding: 10px;
+    margin-left: 20%
+}
+
+.inputFields {
+    width: 60%;
+    max-width: 60%;
+    margin-left: 20%;
+}
+
+.buttonOuter {
+    padding: 0;
+}
+
+.buttonOuter button {
+    max-width: 100%;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+}
+
+.buttonClose {
+    float: right;
+}
+
+.formLabel {
+    margin-top: 10%;
+}

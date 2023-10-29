@@ -1,31 +1,35 @@
-const { customers } = require("./customers.model");
-
 module.exports = (sequelize, Sequelize, DataTypes) => {
-    const customers_address = sequelize.define("customers_address", {
+    const registration = sequelize.define("registration", {
         id: {
             type: DataTypes.INTEGER,
             autoIncrement: true,
             primaryKey: true
         },
-        street: {
+        lastName: {
             type: DataTypes.STRING(200),
             allowNull: false,
         },
-        number: {
+        firstName: {
             type: DataTypes.STRING(200),
             allowNull: false,
         },
-        zipCode: {
-            type: DataTypes.STRING(10),
-            allowNull: false,
-        },
-        city: {
+        name: {
             type: DataTypes.STRING(255),
+            defaultValue: null,
+        },
+        mail: {
+            type: DataTypes.STRING(50),
+            allowNull: false,
+            unique: true,
+        },
+        birthdate: {
+            type: DataTypes.DATE,
             allowNull: false,
         },
-        country: {
-            type: DataTypes.STRING(200),
+        status: {
+            type: DataTypes.BOOLEAN,
             allowNull: false,
+            defaultValue: false,
         },
         createdAt: {
             type: Sequelize.DATE,
@@ -34,14 +38,14 @@ module.exports = (sequelize, Sequelize, DataTypes) => {
         updatedAt: {
             type: Sequelize.DATE,
             defaultValue: Sequelize.fn('NOW'),
-        }
+        },
     }, {
         classMethods: {
             associate: function(models) {
-                customers_address.belongsTo(models.customers, { foreignKeyConstraint: true });
+                registration.hasOne(models.users);
+                registration.hasMany(models.address)
             }
         }
     });
-
-    return customers_address;
+    return registration;
 };

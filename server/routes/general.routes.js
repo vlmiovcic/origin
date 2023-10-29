@@ -22,30 +22,28 @@ app.use(function (request, response, next) {
 
 const Inquiries = require("../controllers/inquiries.controllers");
 const products = require("../controllers/products.controllers");
+const registration = require("../controllers/registration.controllers");
 
 let router = express.Router();
 
 router.post("/inquiries", Inquiries.create);
-
 router.get("/inquiries", Inquiries.findAll);
-
 router.get("/inquiries/:id", Inquiries.findOne);
-
 router.put("/inquiries/:id", Inquiries.update);
-
 router.delete("/inquiries/:id", Inquiries.deleteInquiries);
 app.use(dbConfig.api.default, router);
 
 router.post("/products", products.create);
-
 router.get("/products", products.findAll);
-
 router.get("/products/:id", products.findOne);
-
 router.put("/products/:id", products.update);
-
 router.delete("/products/:id", products.deleteProduct);
-
 app.use(dbConfig.api.default, router);
+
+router.post("/registration", registration.create);
+router.get("/registration", registration.findAll);
+router.get("/registration/:id", registration.findOne);
+router.put("/registration/:id", registration.update);
+router.delete("/registration/:id", registration.deleteRegistration);
 
 module.exports = app;

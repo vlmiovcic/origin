@@ -14,10 +14,10 @@ exec('ps aux | grep node | grep react-scripts | awk \'{ print $2 }\' ', (error, 
         for (let i = 0; i < linesClient.length-1; i++) {
             exec(`kill ${linesClient[i]}`, (error, stdout, stderror) => {
                 if (error) {
-                    console.error('as we tried to kill the process the errors are happend: ', error)
+                    console.error('as we tried to kill the process the errors are happened: ', error)
                 } else {
                     console.log(`kill processes stdout: ${stdout}`);
-                    console.log(`kill processes stderror: ${stderror}`);
+                    console.log(`kill processes stderr: ${stderror}`);
                 }
             });
         }

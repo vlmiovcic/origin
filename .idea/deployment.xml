@@ -6,7 +6,7 @@
       <paths name="serverhome">
         <serverdata>
           <mappings>
-            <mapping deploy="/" local="$PROJECT_DIR$" web="/" />
+            <mapping deploy="/usr/share/nginx/html/it-vladimirmiovcic.com" local="$PROJECT_DIR$" web="/" />
           </mappings>
         </serverdata>
       </paths>
